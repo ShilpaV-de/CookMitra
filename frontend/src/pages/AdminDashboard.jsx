@@ -9,6 +9,9 @@ import AddCookModal from "../components/AddCookModal";
 import AdminDocViewer from "../components/AdminDocViewer";
 import AdminDocUpload from "../components/AdminDocUpload";
 import CouponManagement from "../components/CouponManagement";
+import EventBookingAdmin from "../components/EventBookingAdmin";
+import EventPricingManager from "../components/EventPricingManager";
+import EventTypeManager from "../components/EventTypeManager";
 import VisitStats from "../components/VisitStats";
 import AnalyticsPanel from "../components/AnalyticsPanel";
 import {
@@ -79,6 +82,24 @@ const AdminDashboard = () => {  const [activeTab, setActiveTab] = useState("cook
           <Calendar size={17} /> Platform Bookings
         </button>
         <button
+          className={`tab-btn ${activeTab === "event-bookings" ? "active" : ""}`}
+          onClick={() => setActiveTab("event-bookings")}
+        >
+          <Calendar size={17} /> Event Bookings
+        </button>
+        <button
+          className={`tab-btn ${activeTab === "event-types" ? "active" : ""}`}
+          onClick={() => setActiveTab("event-types")}
+        >
+          <ChefHat size={17} /> Events
+        </button>
+        <button
+          className={`tab-btn ${activeTab === "event-pricing" ? "active" : ""}`}
+          onClick={() => setActiveTab("event-pricing")}
+        >
+          <Tag size={17} /> Event Pricing
+        </button>
+        <button
           className={`tab-btn ${activeTab === "users" ? "active" : ""}`}
           onClick={() => setActiveTab("users")}
         >
@@ -118,6 +139,9 @@ const AdminDashboard = () => {  const [activeTab, setActiveTab] = useState("cook
 
       {activeTab === "cooks" && <CookManagement />}
       {activeTab === "bookings" && <BookingManagement />}
+      {activeTab === "event-bookings" && <EventBookingAdmin />}
+      {activeTab === "event-types" && <EventTypeManager />}
+      {activeTab === "event-pricing" && <EventPricingManager />}
       {activeTab === "users" && <UserManagement />}
       {activeTab === "admins" && <AdminManagement />}
       {activeTab === "leads" && <LeadManagement />}

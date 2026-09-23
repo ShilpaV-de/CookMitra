@@ -7,6 +7,7 @@ import { useShowToast } from "../store/hooks";
 import { formatCurrency, formatDate, playAlarmSound, hasServiceHoursStarted, localTodayStr } from "../utils/constants";
 import CookProfileForm from "../components/CookProfileForm";
 import CookAvailabilityToggle from "../components/CookAvailabilityToggle";
+import CookEventBookings from "../components/CookEventBookings";
 import { resolveFileUrl } from "../components/CookDocUploads";
 import { Check, X, XCircle, BellRing, ArrowRight, Star, MapPin, CalendarDays, Inbox, History, UserRound, Wallet, ChefHat, AlertCircle, ShieldCheck, Clock } from "lucide-react";
 
@@ -304,6 +305,12 @@ const CookDashboard = () => {
           <History size={15} /> Past <span className="cook-tab-count">{previousCount}</span>
         </button>
         <button
+          className={`cook-tab ${view === "events" ? "active" : ""}`}
+          onClick={() => setView("events")}
+        >
+          <CalendarDays size={15} /> Events
+        </button>
+        <button
           className={`cook-tab ${view === "reports" ? "active" : ""}`}
           onClick={() => setView("reports")}
         >
@@ -325,7 +332,7 @@ const CookDashboard = () => {
       </div>
 
       {/* BOOKINGS VIEWS */}
-      {view !== "profile" && view !== "reports" && view !== "slots" && (
+      {view !== "profile" && view !== "reports" && view !== "slots" && view !== "events" && (
         <div>
 
           {loadingBookings && <p className="cook-loading-text">Loading bookings...</p>}
@@ -456,6 +463,18 @@ const CookDashboard = () => {
               </div>
             )
           )}
+        </div>
+      )}
+
+      {/* EVENTS TAB: CookMitra-assigned event bookings (§13) with full
+          event details + event earnings. */}
+      {view === "events" && (
+        <div>
+          <h3 style={{ fontSize: "1.1rem", marginBottom: "0.25rem" }}>Event Assignments</h3>
+          <p style={{ color: "var(--slate-500)", fontSize: "0.9rem", marginBottom: "1rem" }}>
+            Birthdays, anniversaries and family functions CookMitra assigns to you.
+          </p>
+          <CookEventBookings />
         </div>
       )}
 

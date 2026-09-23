@@ -12,6 +12,7 @@
     "dev": "nodemon server.js",
     "seed": "node seeds/seed.js",
     "seed:coupons": "node seeds/seed.js --coupons-only",
+    "seed:events": "node seeds/eventSeed.js",
     "test": "node slot-engine.test.js && node admin-accept.test.js && node login.test.js && node forgot-password.test.js && node coupon.test.js && node master-suite.test.js && node reschedule.test.js && node launch-pricing.test.js && node start-service.test.js && node visit-stats.test.js && node review-rating.test.js && node rate-limit-store.test.js"
   },
   "dependencies": {

@@ -842,6 +842,68 @@ const Home = () => {
         </div>
       </section>
 
+      {/* COOKMITRA EVENTS — birthdays, anniversaries & family functions.
+          You Celebrate. We Cook. No cook selection: CookMitra assigns a
+          suitable verified cook after the request. */}
+      <section className="home-band band-slate" id="events">
+        <div className="section-header">
+          <span className="section-eyebrow">🎉 CookMitra Events</span>
+          <h2 className="section-title">You Celebrate. We Cook.</h2>
+          <p className="section-description">
+            Birthdays, anniversaries, family functions & home celebrations — a cook for your
+            event, from ₹499. Pick your occasion, tell us the menu, see the price, and request.
+            CookMitra assigns a suitable verified cook.
+          </p>
+        </div>
+        <div className="how-it-works-grid">
+          <div className="how-card">
+            <div className="how-card-header">
+              <div className="how-icon-box">
+                <CalendarCheck size={26} />
+              </div>
+              <span className="how-step-badge">01</span>
+            </div>
+            <h3>1. Pick Event & Menu</h3>
+            <p>Birthday, anniversary or family function — date, guests, and your dishes.</p>
+          </div>
+          <div className="how-card">
+            <div className="how-card-header">
+              <div className="how-icon-box">
+                <ChefHat size={26} />
+              </div>
+              <span className="how-step-badge">02</span>
+            </div>
+            <h3>2. Choose Service</h3>
+            <p>Cooking Only, Preparation + Cooking, or Cooking + Serving — by the hour.</p>
+          </div>
+          <div className="how-card">
+            <div className="how-card-header">
+              <div className="how-icon-box">
+                <CalendarClock size={26} />
+              </div>
+              <span className="how-step-badge">03</span>
+            </div>
+            <h3>3. See Price & Request</h3>
+            <p>Full breakdown up front — service + extra cooks + travel. Then request booking.</p>
+          </div>
+          <div className="how-card">
+            <div className="how-card-header">
+              <div className="how-icon-box">
+                <UserCheck size={26} />
+              </div>
+              <span className="how-step-badge">04</span>
+            </div>
+            <h3>4. We Assign the Cook</h3>
+            <p>CookMitra assigns a verified cook for your event — confirmed, then enjoy.</p>
+          </div>
+        </div>
+        <div style={{ textAlign: "center", marginTop: "1.75rem" }}>
+          <Link to="/events" className="btn btn-lg hero-v2-btn-primary">
+            <ChefHat size={18} /> Book an Event Cook <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
       {/* Customer Testimonials */}
       <section className="testimonials-section home-band band-abyss">
         <div className="section-header">

@@ -222,6 +222,11 @@ app.use("/uploads", uploadAccess, express.static(path.join(__dirname, "uploads")
 app.use("/api/auth", authLimiter, require("./routes/auth"));
 app.use("/api/cooks", require("./routes/cooks"));
 app.use("/api/bookings", require("./routes/bookings"));
+// COOKMITRA EVENTS (MVP): event catalogue, event bookings (admin-assigned
+// cooks), and the admin-editable event pricing engine.
+app.use("/api/events", require("./routes/events"));
+app.use("/api/event-bookings", require("./routes/eventBookings"));
+app.use("/api/event-pricing", require("./routes/eventPricing"));
 app.use("/api/payments", strictLimiter, require("./routes/payments"));
 app.use("/api/availability", require("./routes/availability"));
 app.use("/api/reviews", require("./routes/reviews"));
